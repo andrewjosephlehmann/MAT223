@@ -1,0 +1,361 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\setlength{\parindent}{0em} %indents to paragraphs
+\setlength{\parskip}{1em} %lineskips after paragraph breaks
+\usepackage[margin=1.0in]{geometry} %margins
+\usepackage{bbm}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{physics}
+
+\usetikzlibrary{calc}
+
+
+\newenvironment{amatrix}[1]{%
+	\left(\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right)
+}
+\makeatletter
+\let\@@span\span
+\def\sp@n{\@@span\omit\advance\@multicnt\m@ne}
+\makeatother
+
+\renewcommand{\span}{...}
+
+
+
+\title{Group Report 1}
+\author{A. Lehmann, S. Lee}
+\date{Feburary 2nd 2023}
+
+\begin{document}
+	
+	\maketitle
+	\section{Fundamentals}
+	\subsection{The differences between the scalar zero and the zero vector.}
+	\subsection{Row reduction using an augmented matrix}
+	
+	
+	\section{Linear Combinations}
+	
+	\section{Methods of Expressing a Plane}
+	\subsection{Expression of a given plane in vector form}
+	\subsection{The advantages of expressing a plane in vector form}
+	
+	
+	\clearpage
+	
+	\maketitle{1    Fundamentals}
+	
+	\textbf{1.1 The differences between the scalar zero and the zero vector.}
+	
+	\textbf{To fundamentally understand the discrepancy between the scalar zero and the zero vector, it is necessary to reflect on the definition of a scalar and a vector.}
+	
+	\textit{A scalar defines a given mathematical object's size or quantity (i.e. magnitude).}
+	
+	\textit{A vector is a term that contains a scalar that multiplies elements of some vector spaces (i.e. a direction).}
+	
+	\textbf{A zero vector is a vector with a magnitude of zero paired with a arbitrary direction $\vec{0}$. By drawing in $\mathbb R^2$ we can compare a zero vector with a non-zero vector. (The zero vector is displayed in blue, and the non-zero vector is displayed in red.)}
+	
+\title{Figure 1: Zero Vector in Comparison to Arbitrary Non-Zero Vector in $\mathbb R^2$}
+	
+	\begin{tikzpicture}
+		
+		[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round]
+		%Coordinates
+		%Vectors Parallel to Plane
+		%Beginning of Axis
+		\coordinate (O) at (0,0);
+		%Random Point
+	%%	\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+		
+		%Axis 	
+		\draw[-latex] (-3,0,0) -- (3,0,0) node[pos = 1.05] {$x$};
+		\draw[-latex] (0,-3,0) -- (0,3,0) node[pos = 1.05] {$y$};
+	%%	\draw[draw=black, fill=black] (O) circle (1pt) node[below] {${O}$};
+		
+		%Vectors
+		\draw[->, thick, red] (0,0) -- (2,2);
+	    \filldraw[blue] (0,0) circle (2pt);
+		
+		%	%Random Point
+		%	\draw[-latex, thick] (O) -- (P) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r}$};
+		%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
+		
+	\end{tikzpicture}
+		
+	
+	\textbf{The zero scalar and zero vector may have similar properties in some instances. For instance, amongst scalars, we can represent the zero scalars by algebraic operations between different values. On the other hand, we may accidentally encounter the zero vector when adding or subtracting various vectors. (e.g. $\vec{a} = \begin{bmatrix} 1 \\ 1   \end{bmatrix} $ and $\Vec{b} = \begin{bmatrix} -1 \\ -1   \end{bmatrix}$ adding the two vectors results in zero vector, $\vec{{a}} + \vec{{b}} = \vec{{0}} $.)}
+	
+	\textbf{Despite these properties, a scalar lacks a direction, therefore from an algebraic viewpoint they cannot be the same since vectors refer to elements of given spaces while scalars refer to the quantity of a mathematical object.}
+	
+	\textbf{From the definitions and examples provided above, one can deduce discrepancies between the scalar zero and the zero vector. Let's choose a zero vector that only has one set of elements, therefore in space $\mathbb R^1$. The zero vector does have one element, that is, $x=0$. However, it is not equivalent to the zero scalars since vectors are mathematical objects that refer to a location in space, while the zero scalar that is of the value zero.} 
+	
+%%	\textit{Vectors are a point in a given space, (e.g) $\Vec{0},  \begin{bmatrix}
+		%	1 \\
+		%	2 
+	%%	\end{bmatrix}$. It is important to look past the model of a vector being an arrow, and look where it lies in a given space. From that perspective we can begin to understand why the zero vector has an undefined direction since it is the basis for which it gives it's direction to non-zero vectors. Which is what fundamentally discerns it from the scalar zero.}
+	
+	%%%% make a graph that shows random points and say that we could choose an arbitrary point of which it is the zero vector.
+		
+	\clearpage
+	\maketitle{1    Fundamentals}
+	
+	\textbf{1.2 Row reduction of an augmented matrix}
+	
+	\textbf{Choose an arbitrary matrix with three equations and three unknowns.\\ 
+		Therefore let our matrix be defined as 
+		$ X = \begin{pmatrix}
+			1 & 2 & 3 &\bigm| & 6 \\
+			2 & -3 & 2 &\bigm| & 14 \\
+			3 & 1 & -1 &\bigm| & -2 
+		\end{pmatrix}$}
+	
+	\textbf{For our matrix to be converted to reduced echelon form, the following conditions must be satisfied:}
+	
+	\textsc{- The first non-zero entry in every row is one\\ - Above and below each leading one is zero\\ - The leading ones form an echelon staircase pattern\\ - Rows of zeroes occur at the bottom of the matrix}
+	
+	\textbf{Our matrix in reduced echelon form $ X = \begin{pmatrix}
+			1 & 0 & 0 &\bigm| & 1\\
+			0 & 1 & 0 &\bigm| & -2 \\
+			0 & 0 & 1 &\bigm| & 3 
+		\end{pmatrix}$}
+	
+	\textbf{To deduce what the reduced echelon form of our matrix is. We have three elementary row operations that help us transform our initial matrix to a reduced row echelon form:}
+	
+	\textsc{- Swap two rows $R_{{a}} \longleftrightarrow R_{{b}}$ \\ - Multiply a row by non-zero scalar $R_{{a}} = \alpha R_{{a}}$\\ - Adding a multiple of one row to another $R_{{a}} = \alpha R_{{a}} + \beta R_{{b}}$}\\
+	\textit{$\alpha$ and $\beta$ represent some scalar multiple.}
+	
+	\textbf{Thus, our arbitrary matrix $X$ can be reduced}
+	
+	\textbf{$ X = \begin{pmatrix}
+			1 & 2 & 3 &\bigm| & 6 \\
+			2 & -3 & 2 &\bigm| & 14 \\
+			3 & 1 & -1 &\bigm| & -2 \end{pmatrix} R_{{2}} = R_{{2}} - 2R_{{1}}\longrightarrow \begin{pmatrix}
+			1 & 2 & 3 &\bigm| & 6 \\
+			0 & -7 & -4 &\bigm| & 14 \\
+			3 & 1 & -1 &\bigm| & -2 \end{pmatrix}$}
+	
+	\textbf{$R_{{3}} = R_{{3}} - 3R_{{1}} \longrightarrow \begin{pmatrix}
+			1 & 2 & 3 &\bigm| & 6 \\
+			0 & -7 & -4 &\bigm| & 4 \\
+			0 & -5 & -10 &\bigm| & -20 \end{pmatrix}$ $R_{{3}} = R_{{3}}/-5 \longrightarrow \begin{pmatrix}
+			1 & 2 & 3 &\bigm| & 6 \\
+			0 & -7 & -4 &\bigm| & 4 \\
+			0 & 1 & 2 &\bigm| & 4 \end{pmatrix}$}
+	
+	\textbf{$R_{{2}} \longleftrightarrow R_{{3}} \longrightarrow \begin{pmatrix}
+			1 & 2 & 3 &\bigm| & 6 \\
+			0 & 1 & 2 &\bigm| & 4 \\
+			0 & -7 & -4 &\bigm| & 2 \end{pmatrix}$ $R_{{3}} = R_{{3}} + 7R_{{2}}\longrightarrow \begin{pmatrix}
+			1 & 2 & 3 &\bigm| & 6 \\
+			0 & 1 & 2 &\bigm| & 4 \\
+		0 & 0 & 10 &\bigm| & 30 \end{pmatrix}$}
+	
+	\textbf{$R_{{3}} = R_{{3}}/10 \longrightarrow \begin{pmatrix}
+			1 & 2 & 3 &\bigm| & 6 \\
+			0 & 1 & 2 &\bigm| & 4 \\
+			0 & 0 & 1 &\bigm| & 3 \end{pmatrix}$}
+		
+	\textit{The following method is optional, and you may continue reducing if you wish, let's take the value of $z = 3$ and solve for the remaining unknowns.}
+	
+	\clearpage
+	
+	\maketitle{1    Fundamentals}
+	
+	\textbf{Substitute the given value of $z$ into the equation which represents row 2:\\$y + 2z = 4 \Longrightarrow y = -2$ \\ Now, with the value of $y = -2$ we can conclude the value of $x$ by plugging it into an equation representing row 1:\\ $x + 2y + 3z = 6 \Longrightarrow x = 1$} %%
+	
+	\textbf{Thus $x=1$, $y=-2$, $z=3$} %%
+	
+	\textit{I find these methods are critical to that learning row reduction since learners tend to forget the fundamental link between solving systems of equations and reduced row echelon form. It is important to establish that they are the same thing. However, they are presented to us differently, which depending on the method, helps us mathematicians conquer a matrix in a smaller time interval and may offer a creative intuition for many problems to come.}
+	
+	\maketitle {2   Linear Combinations}
+	
+	\textbf{Definition:}
+	\textit{a vector $\Vec{v} \in V$ is called a linear combination of vectors $\vec{v}_{{1}}, \vec{v}_{{2}}, ..., \vec{v}_{{n}}$ in $V$  when one can express $\vec{v}$ in form $\vec{v} = \alpha_{{1}}\vec{v}_{{1}} + \alpha_{{2}}\Vec{v}_{{2}} + ... + \alpha_{{n}}\Vec{v_{{n}}},$ where $\alpha_{{1}}, \alpha_{{2}}, ..., \alpha_{{n}}, $ are scalars.} %%
+	
+	
+	\textbf{Let $\vec{v} = \begin{bmatrix}
+			1 \\
+			1 \\
+			3
+		\end{bmatrix}$ select two arbitrary vectors so we can establish the basis of which we can combine these two vectors, $\Vec{b}_{1}, \Vec{b}_{2}$ to form $\Vec{v}$. To make it mathematically interesting, $\Vec{b}_{1}, \Vec{b}_{2}$ are non-zero vectors that are not multiples of eachother. With this framework, we must find linearly independent vectors that can form a given plane that includes the vector $\vec{v}$. }
+	
+	\textbf{This is akin to how we establish the basis vectors in a given space, for example if we were to establish the basis vectors in $\mathbb R^3$ it is required to have three linearly independant vectors, such as $\vec{a} = \begin{bmatrix}
+			0 \\
+			0 \\
+			1
+		\end{bmatrix}, \vec{b} = \begin{bmatrix}
+			0 \\
+			1 \\
+			0
+		\end{bmatrix}, \vec{c} = \begin{bmatrix}
+			1 \\
+			0 \\
+			0 
+		\end{bmatrix}$ with this three vectors we can go anywhere in $\mathbb R^3$.}
+	
+		\textit{(i.e. $span\left\lbrace
+		\begin{bmatrix}
+			0 \\
+			0 \\
+			1
+		\end{bmatrix}, \begin{bmatrix}
+			0 \\
+			1 \\
+			0
+		\end{bmatrix}, \begin{bmatrix}
+			1 \\
+			0 \\
+			0 
+		\end{bmatrix}
+	\right\rbrace = \mathbb R^3$)}
+	
+\title{Figure 2: The Select Basis Vectors in $\mathbb R^3$}
+
+\begin{tikzpicture}
+	
+		[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round]
+		%Coordinates
+		%Vectors Parallel to Plane
+		%Beginning of Axis
+		\coordinate (O) at (0,0,0);
+		%Random Point
+		\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+		
+		%Axis 	
+		\draw[-latex] (-2.5,0,0) -- (2.5,0,0) node[pos = 1.05] {$x$};
+		\draw[-latex] (0,-1.5,0) -- (0,1.5,0) node[pos = 1.05] {$y$};
+		\draw[-latex] (0,0,-1.5) -- (0,0,1.5) node[pos = 1.05] {$z$};
+		\draw[draw=black, fill=black] (O) circle (1pt) node[below] {${O}$};
+		
+		%Basis vectors
+		\draw[->, thick, green] (0,0,0) -- (0,0,1);
+		\draw[->, thick, blue] (0,0,0) -- (0,1,0);
+		\draw[->, thick, red] (0,0,0) -- (1,0,0);
+		
+		%	%Random Point
+		%	\draw[-latex, thick] (O) -- (P) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r}$};
+		%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
+	
+\end{tikzpicture}
+
+
+
+\textit{Instead of making a combination of vectors that can go anywhere in a given space, we can make a combination of vectors that can go anywhere in given plane, which contains a given line.}
+
+\clearpage
+
+\maketitle{Linear Combinations}
+
+\def\t{0.9}
+\def\s{0.04}
+\def\tt{0.3}
+\def\ss{0.7}
+\def\ttt{0.5}
+\def\sss{0.5}
+
+\maketitle{Figure 3: Arbitrary Plane Which Contains $\Vec{v}$}
+
+\begin{tikzpicture}
+[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round]
+	%Coordinates
+	%Vectors Parallel to Plane
+	%Beginning of Axis
+	\coordinate (O) at (0,0,0);
+	%Random Point
+	\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+	
+
+	\coordinate (x1) at (0.6,1.2,2.9);
+	\coordinate (x2) at (1,-2,2.9);
+	\coordinate (x3) at (4.5,-3,1.3);
+	\coordinate (x4) at (5,-0.7,0.8);
+	%Vectors Parallel to Plane
+	\coordinate (n1) at ($(x2) - (x1)$);
+	\coordinate (n2) at ($(x2) - (x3)$); 
+	%Points on Plane
+	\coordinate (x5) at ($(x1) + \s*(n1) - \t*(n2)$);
+	\node[outer sep = 1pt, inner sep = 1pt] (x6) at ($(x1) + \ss*(n1) - \tt*(n2)$) {};
+	\coordinate (x7) at ($(x1) + \sss*(n1) - \ttt*(n2)$);
+	%Beginning of Axis
+	\coordinate (O) at (0,0,0);
+	%Random Point
+	\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+	
+	%Axis 	
+	\draw[-latex] (0,0,0) -- (3,0,0) node[pos = 1.05] {$x$};
+	\draw[-latex] (0,0,0) -- (0,3,0) node[pos = 1.05] {$y$};
+	\draw[-latex] (0,0,0) -- (0,0,3) node[pos = 1.05] {$z$};
+	\draw[draw=black, fill=black] (O) circle (1pt) node[below] {${O}$};
+	
+		%vectors
+	\draw[->, thick, magenta] (0,0,0) -- (1,1,3);
+	
+	%Point on Plane
+	%%\draw[-latex, thick] (O) -- (x6) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r_o}$};
+	%Plane
+	\path[draw=black, fill=black!20, thick, opacity = 0.8] (x1) -- (x2) -- (x3) -- (x4) -- (x1);
+	%\node[shift={(-0.45,0.6)}] at (x3) {$\Pi$};
+	
+
+	%	%Random Point
+	%	\draw[-latex, thick] (O) -- (P) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r}$};
+	%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
+	
+\end{tikzpicture}
+
+\textbf{Now we can choose an arbitrary vector that is not a zero vector or a multiple of $\vec{v}$. \\ Choose 
+	$\vec{b_{1}} =   \begin{bmatrix}
+			1 \\
+			0 \\
+			-1
+		\end{bmatrix}$}
+\textbf{ and with that, we can deduce the direction vector, $\vec{b}_{2}$. Since $\vec{b}_{1}$ and $\vec{b}_{2}$ come together to form $\vec{v}:$} \textbf{$\vec{b}_{2} = \vec{v} + \vec{b}_{1}$}
+\textbf{ $\rightarrow$ $\vec{b}_{2} = \begin{bmatrix}
+		1 \\ 
+		1 \\
+		3
+	\end{bmatrix} + \begin{bmatrix}
+	1 \\
+	0 \\ 
+	-1
+\end{bmatrix} = \begin{bmatrix}
+2 \\
+1 \\
+2
+\end{bmatrix}$}
+\textbf{We can rearrange the vectors to confirm if $\vec{v} \in \Pi, (\Pi = s\vec{b}_{1} + t\vec{b}_{2})$}
+\textbf{Set, $\vec{v} = \alpha_{{1}}\vec{b_{1}} + \alpha_{{2}}\vec{b}_{2}$ $\rightarrow$ $\vec{v} = \begin{bmatrix}
+		1 \\
+		0 \\
+		-1
+	\end{bmatrix} - \begin{bmatrix}
+	 	2 \\
+	 	1 \\ 
+	 	2
+	 \end{bmatrix} \rightarrow \vec{v} = \begin{bmatrix}
+	 1 \\
+	 1 \\ 
+	 3 
+	\end{bmatrix}$, with this we know the values of are scalar mulitples $\alpha_{1} = 1$ and $\alpha_{2} = -1 $}
+
+\textbf{To write $\vec{v}$ as a linear combination of two vectors, choose $\alpha_{1} = 1, \alpha_{2} = -1$, paired with vectors $\vec{b}_{1}, \vec{b}_{2}$ $\rightarrow$ $\vec{v} = \alpha_{{1}}\vec{b}_{1} + \alpha_{{2}}\vec{b}_{2}$ $\leftrightarrow$ $\vec{v} = \vec{b}_{1} - \vec{b}_{2}$ $\leftrightarrow$ $\vec{v} = \begin{bmatrix}
+		1 \\
+		1 \\
+		3
+\end{bmatrix}$}
+	
+\clearpage
+\maketitle{3 Methods of Expressing a Plane}
+
+\textbf{3.1 Expression of a given plane in vector form}
+
+	
+\end{document}
