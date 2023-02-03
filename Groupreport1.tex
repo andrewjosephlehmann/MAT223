@@ -374,8 +374,8 @@
 \textit{$\rbrace$.}
 \textit{The vectors $\vec{d}_1$ and $\vec{d}_2$ are called direction vectors for $\mathit P$.}
 
-\textbar{To represent the plane in vector form, find the normal vector when taking the cross-product of two linearly independent vectors lying on the plane. Let's find these two vectors that lie on our plane: \\
-$\vec{v}_1 = A - B$
+\textbar{To represent the plane in vector form, we must perform vector subtraction. Let's find these two vectors that lie on our plane: \\
+$\vec{d}_1 = A - B$
 $ = \begin{bmatrix}
 	1 \\ 
 	1 \\
@@ -389,16 +389,47 @@ $ = \begin{bmatrix}
 	1 \\
 	4
 \end{bmatrix}$,
-$\vec{v}_2 = C - B$
+$\vec{d}_2 = C - B$
 $ = \begin{bmatrix}
 	2 \\ 
 	1 \\ 
 	6
-\end{bmatrix} + \begin{bmatrix}
+\end{bmatrix} - \begin{bmatrix}
 	1 \\
 	0 \\
 	-1
+\end{bmatrix} = \begin{bmatrix}
+	1 \\
+	1 \\
+	5
 \end{bmatrix}$}
+
+\textbar{Then, we can choose a point on our plane and set it as our position vector. Let's select point $C$: \\ $\vec{p} = C = \begin{bmatrix} 
+		2 \\
+		1 \\
+		6
+\end{bmatrix}$}
+
+\textbar{By referencing the definition, we remark that the prerequisites are satisfied for writing our plane in vector form.}
+
+\textit{That is, $\mathit P =$}
+\textit{$\lbrace$}
+\textit{$\vec{x} : t\begin{bmatrix} 
+		0 \\
+		1 \\
+		4
+\end{bmatrix}
+		+ s\begin{bmatrix} 
+			1 \\
+			1 \\
+			5
+		\end{bmatrix} + \vec{p}$, for some $t,s\in\mathbb R$}
+\textit{$\rbrace$.} \\
+\textbar{Which satisfies our definition of a plane:}
+\textit{$\mathit P =$}
+\textit{$\lbrace$}
+\textit{$\vec{x} : t\vec{d}_{1} + s\vec{d}_{2} + \vec{p}$, for some $t,s\in\mathbb R$}
+\textit{$\rbrace$.} 
 
 
 \end{document}
