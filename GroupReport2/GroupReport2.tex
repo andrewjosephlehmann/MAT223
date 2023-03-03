@@ -199,7 +199,7 @@ The set is linearly dependent if the linear combination contains a non-zero scal
 	\end{bmatrix}$
 \end{center}
 
-\textbar{To uncover if a subspace is linearly independent, we must express the subspace as a matrix. Then employ reduced row echelon form to determine if there is a non-trivial solution to the linear combination of the set that composes this subspace.}
+\textbar{To uncover if a subspace is linearly independent, we must express the subspace as a matrix. Then employ reduced row echelon form to determine if there is a trivial solution to the linear combination of the set that composes this subspace.}
 
 \begin{center}
 	$S =  \left\lbrace\begin{bmatrix} 
@@ -222,7 +222,7 @@ The set is linearly dependent if the linear combination contains a non-zero scal
 	-2 & 2 & 4
 	\end{bmatrix}$ 
 \end{center}
-\textbar{Utilizing the methods in (Group report 1 section 1.2), we find the non-trivial solution to linear combination of vectors. }
+\textbar{Utilizing the methods in (Group report 1 section 1.2), we find the trivial solution to linear combination of vectors. }
 
 \begin{center}
 $\begin{bmatrix}
@@ -302,8 +302,33 @@ $
 \end{center}
 \textit{This reduced row echelon indicates that these arbitrary vectors are linearly independent. Since:}
 \begin{center}
-	$\alpha_{1} = \alpha_{2} = \alpha_{3} = \vec{0}$
+	$\alpha_{1} = \alpha_{2} = \alpha_{3} = 0$
 \end{center}
 \subsubsection{Linear Dependence of a Subspace}
+\textbar{For an example of a subspace in $\mathbb{R}^3$, whose vectors are linearly dependent, we must choose a set of vectors that produce a non-trivial solution to the linear combination whose output produces the zero vector: }
+\begin{center}
+	${S = \lbrace \vec{v}_{1} ,\vec{v}_{2},\vec{v}_{3}  \rbrace \implies \alpha_{1}\vec{v}_{1} + \alpha_{2}\vec{v}_{2} + \alpha_{3}\vec{v}_{3} = \vec{0}}$
+\end{center}
+\textbar{Let us choose three vectors that comprise our linearly dependent subspace:}
+\begin{center}
+	$ S = \lbrace \vec{v}_{1},\vec{v}_{2}, \vec{v}_{3} \rbrace \rightarrow \vec{v}_{1} = 
+	\begin{bmatrix} 
+		1 \\
+		1 \\
+		1 
+	\end{bmatrix} \space \space	\vec{v}_{2} = 
+	\begin{bmatrix}
+		1 \\ 
+		-1 \\
+		2
+	\end{bmatrix} \space\space \vec{v}_{3} = 
+	\begin{bmatrix}
+		3 \\ 
+		1 \\
+		4
+	\end{bmatrix}$
+\end{center}
+\textbar{Much like linear independence, we must express the set that composes such a subspace in a matrix to find if a subspace is linearly dependent. Then utilize reduced row reduction to determine if there is a non-trivial solution. }
 
 \end{document}
+
