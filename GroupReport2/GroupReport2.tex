@@ -41,10 +41,269 @@
 
 \begin{document}
 	\maketitle
-	\textit{Group report 2 iterates upon the concepts introduced and covered in Group Report 1. Hence it is advised to read Group Report 1 before Group Report 2. }
+	\textit{Group report 2 iterates upon the concepts introduced in Group Report 1. Hence it is advised to read Group Report 1 before Group Report 2. }
 	\tableofcontents
 \clearpage 
-\section{Linear Independence and Dependence of a Set of Vectors in $\mathbb{R}^3$}
-\subsection{..}
+\section{Linear Independence and Dependence of a Set of Vectors}
+\textbar{In Group Report 1, we delved into the theory of vector spaces, which we were interested in defining $\mathbb{R}^3$. As a result, we devised three linearly independent vectors, which span would represent $\mathbb{R}^3$ itself. Therefore in this matter, we are interested in the distinction between linear independence and dependence among a set of vectors. In the theory of vector spaces, one knows a set of vectors is linearly independent if no nontrivial linear combinations of vectors are equal to the zero vector. The negation of linear independence is linear dependence. We can define linear dependence as a set of vectors in which one or more vectors are linear combinations of another. 
+	
+
+To familiarize ourselves with linear dependence, we shall view a mental model that illustrates a linear-dependent set of vectors in $\mathbb{R}^2$:
+}
+\begin{center}
+	\begin{tikzpicture}
+	
+	[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round]
+	%Coordinates
+	%Vectors Parallel to Plane
+	%Beginning of Axis
+	\coordinate (O) at (0,0);
+	%Random Point
+	%%	\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+	
+	%Axis 	
+	%\draw[-latex] (-3,0,0) -- (3,0,0) node[pos = 1.05] {$x$};
+	%\draw[-latex] (0,-3,0) -- (0,3,0) node[pos = 1.05] {$y$};
+	%%	\draw[draw=black, fill=black] (O) circle (1pt) node[below] {${O}$};
+	
+	%Vectors
+	\draw[->, thick, red] (0,0) -- (2,2);
+	\draw[->, thick, blue] (0,0) -- (5,1);
+	\draw[->, thick, green] (0,0) --(4,2);
+	
+	%	%Random Point
+	%	\draw[-latex, thick] (O) -- (P) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r}$};
+	%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
+	
+\end{tikzpicture}
+
+
+\end{center}
+
+\textbar{In this case, this set contains a redundant vector which makes this set of vectors linearly dependent. A redundant vector means the entire set can be expressed as linear combinations of other vectors. So, how does one make this set linearly independent? The answer is simple: remove one of the three vectors in this set and receive a set of linearly independent vectors. 
+
+Here are illustrations of the same vectors, now as linearly independent sets of vectors in $\mathbb{R}^2$:}
+
+\begin{center}
+
+	\begin{tikzpicture}
+		
+		[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round]
+		%Coordinates
+		%Vectors Parallel to Plane
+		%Beginning of Axis
+		\coordinate (O) at (0,0);
+		%Random Point
+		%%	\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+		
+		%Axis 	
+		%\draw[-latex] (-3,0,0) -- (3,0,0) node[pos = 1.05] {$x$};
+		%\draw[-latex] (0,-3,0) -- (0,3,0) node[pos = 1.05] {$y$};
+		%%	\draw[draw=black, fill=black] (O) circle (1pt) node[below] {${O}$};
+		
+		%Vectors
+		\draw[->, thick, red] (0,0) -- (2,2);
+		\draw[->, thick, blue] (0,0) -- (5,1);
+		%\draw[->, thick, green] (0,0) --(4,2);
+		
+		%	%Random Point
+		%	\draw[-latex, thick] (O) -- (P) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r}$};
+		%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
+		
+	\end{tikzpicture}
+	%
+	\begin{tikzpicture}
+		
+		[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round]
+		%Coordinates
+		%Vectors Parallel to Plane
+		%Beginning of Axis
+		\coordinate (O) at (0,0);
+		%Random Point
+		%%	\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+		
+		%Axis 	
+		%\draw[-latex] (-3,0,0) -- (3,0,0) node[pos = 1.05] {$x$};
+		%\draw[-latex] (0,-3,0) -- (0,3,0) node[pos = 1.05] {$y$};
+		%%	\draw[draw=black, fill=black] (O) circle (1pt) node[below] {${O}$};
+		
+		%Vectors
+		\draw[->, thick, red] (0,0) -- (2,2);
+		%\draw[->, thick, blue] (0,0) -- (5,1);
+		\draw[->, thick, green] (0,0) --(4,2);
+		
+		%	%Random Point
+		%	\draw[-latex, thick] (O) -- (P) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r}$};
+		%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
+		
+	\end{tikzpicture}
+	%
+	\begin{tikzpicture}
+	
+	[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round]
+	%Coordinates
+	%Vectors Parallel to Plane
+	%Beginning of Axis
+	\coordinate (O) at (0,0);
+	%Random Point
+	%%	\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+	
+	%Axis 	
+	%\draw[-latex] (-3,0,0) -- (3,0,0) node[pos = 1.05] {$x$};
+	%\draw[-latex] (0,-3,0) -- (0,3,0) node[pos = 1.05] {$y$};
+	%%	\draw[draw=black, fill=black] (O) circle (1pt) node[below] {${O}$};
+	
+	%Vectors
+	%\draw[->, thick, red] (0,0) -- (2,2);
+	\draw[->, thick, blue] (0,0) -- (5,1);
+	\draw[->, thick, green] (0,0) --(4,2);
+	
+	%	%Random Point
+	%	\draw[-latex, thick] (O) -- (P) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r}$};
+	%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
+	
+\end{tikzpicture}
+\end{center}
+
+\textbar{In a more mathematically rigorous approach, we may determine whether a set of vectors is linearly independent or linearly dependent. Then, we can look at the trivial and non-trivial solutions of
+	\begin{center} $\alpha_{1}\vec{v}_{1} + \alpha_{2}\vec{v}_{2} + ... + \alpha_{n}\vec{v}_{n} = \vec{0}$
+	\textit{,	where $\alpha_{1},\alpha_{2},...,\alpha_{n}$ are scalars.}
+	\end{center}
+
+The set is linearly dependent if the linear combination contains a non-zero scalar. Otherwise, if all scalars equal zero, the set of vectors is linearly independent.}
+%%% continue with examples explaining as to why that is the case. %%%
+
+\subsection{Subspaces in $\mathbb{R}^3$}
+\textbar{Let S = $\lbrace{\vec{v}_{1}, \vec{v}_{2}, \vec{v}_{3}\rbrace}$ be a subset of $\mathbb{R}^3$. Then, using the abovementioned methods, we may determine whether the set S is linearly independent or dependent. }
+\subsubsection{Linear Independence of a Subspace}
+\begin{center}
+	${S = \lbrace \vec{v}_{1} ,\vec{v}_{2},\vec{v}_{3}  \rbrace \implies \alpha_{1}\vec{v}_{1} + \alpha_{2}\vec{v}_{2} + \alpha_{3}\vec{v}_{3} = \vec{0}}$
+\end{center}
+\textbar{To give an example. let's choose arbitrary vectors for our set $S$, that happens to be linearly independent.}
+\begin{center}
+	$ S = \lbrace \vec{v}_{1},\vec{v}_{2}, \vec{v}_{3} \rbrace \rightarrow \vec{v}_{1} = 
+	\begin{bmatrix} 
+		1 \\
+		1 \\
+		-2 
+	\end{bmatrix} \space \space	\vec{v}_{2} = 
+	\begin{bmatrix}
+		1 \\ 
+		-1 \\
+		2
+	\end{bmatrix} \space\space \vec{v}_{3} = 
+	\begin{bmatrix}
+		3 \\ 
+		1 \\
+		4
+	\end{bmatrix}$
+\end{center}
+
+\textbar{To uncover if a subspace is linearly independent, we must express the subspace as a matrix. Then employ reduced row echelon form to determine if there is a non-trivial solution to the linear combination of the set that composes this subspace.}
+
+\begin{center}
+	$S =  \left\lbrace\begin{bmatrix} 
+		1 \\
+		1 \\
+		-2 
+	\end{bmatrix},
+	\begin{bmatrix}
+		1 \\ 
+		-1 \\
+		2
+	\end{bmatrix},
+	\begin{bmatrix}
+		3 \\ 
+		1 \\
+		4
+	\end{bmatrix} \right\rbrace \rightarrow \begin{bmatrix}
+	1 & 1 & 3 \\
+	1 & -1 & 1 \\
+	-2 & 2 & 4
+	\end{bmatrix}$ 
+\end{center}
+\textbar{Utilizing the methods in (Group report 1 section 1.2), we find the non-trivial solution to linear combination of vectors. }
+
+\begin{center}
+$\begin{bmatrix}
+		1 & 1 & 3 \\
+		1 & -1 & 1 \\
+		-2 & 2 & 4
+	\end{bmatrix} R_{2} = R_{2} - R_{1} \rightarrow 
+\begin{bmatrix}
+	1 & 1 & 3 \\
+	0 & -2 & -2 \\
+	-2 & 2 & 4
+	\end{bmatrix} R_{3} = R_{3} + 2R_{2} \rightarrow 
+\begin{bmatrix}
+	1 & 1 & 3 \\
+	0 & -2 & -2 \\
+	0 & 4 & 10
+\end{bmatrix}$ 
+\end{center}
+
+\begin{center}
+	$\begin{bmatrix}
+		1 & 1 & 3 \\
+		0 & -2 & -2 \\
+		0 & 4 & 10
+	\end{bmatrix} R_{2} = -\frac{R_{2}}{2} \rightarrow 
+	\begin{bmatrix}
+			1 & 1 & 3 \\
+			0 & 1 & 1 \\
+			0 & 4 & 10
+		\end{bmatrix} R_{1} = R_{1} - R_{2} \rightarrow
+	\begin{bmatrix}
+		1 & 0 & 2 \\
+		0 & 1 & 1 \\
+		0 & 4 & 10
+	\end{bmatrix} $ 
+	
+\end{center}
+
+\begin{center}
+$
+	\begin{bmatrix}
+		1 & 0 & 2 \\
+		0 & 1 & 1 \\
+		0 & 4 & 10
+	\end{bmatrix} R_{3} = R_{3} - 4R_{2} \rightarrow
+\begin{bmatrix}
+	1 & 0 & 2 \\
+	0 & 1 & 1 \\
+	0 & 0 & 6 
+	\end{bmatrix} R_{3} = \frac{R_{3}}{6} \rightarrow
+\begin{bmatrix}
+	1 & 0 & 2 \\
+	0 & 1 & 1 \\
+	0 & 0 & 1 
+\end{bmatrix} $ 
+	
+\end{center}
+
+\begin{center}
+	$
+	\begin{bmatrix}
+		1 & 0 & 2 \\
+		0 & 1 & 1 \\
+		0 & 0 & 1
+	\end{bmatrix} R_{1} = R_{1} - 2R_{3} \rightarrow
+	\begin{bmatrix}
+		1 & 0 & 0 \\
+		0 & 1 & 1 \\
+		0 & 0 & 1 
+	\end{bmatrix} R_{2} = R_{2} - R_{3} \rightarrow
+	\begin{bmatrix}
+		1 & 0 & 0 \\
+		0 & 1 & 0 \\
+		0 & 0 & 1 
+	\end{bmatrix} $ 
+	
+\end{center}
+\textit{This reduced row echelon indicates that these arbitrary vectors are linearly independent. Since:}
+\begin{center}
+	$\alpha_{1} = \alpha_{2} = \alpha_{3} = \vec{0}$
+\end{center}
+\subsubsection{Linear Dependence of a Subspace}
 
 \end{document}
