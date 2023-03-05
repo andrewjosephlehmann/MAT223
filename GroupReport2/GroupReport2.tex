@@ -76,7 +76,7 @@ To familiarize ourselves with linear dependence, we shall view a mental model th
 	%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
 	
 \end{tikzpicture}
-$S = \left\lbrace\vec{a}, \vec{b}, \vec{c}\right\rbrace$
+$I = \left\lbrace\vec{a}, \vec{b}, \vec{c}\right\rbrace$
 
 \end{center}
 
@@ -98,10 +98,10 @@ $S = \left\lbrace\vec{a}, \vec{b}, \vec{c}\right\rbrace$
 \textbar{Here are illustrations of the same vectors, now as linearly independent sets of vectors in $\mathbb{R}^2$:}
 
 \begin{center}
-	$ S = \left\lbrace \vec{a}, \vec{b}, \vec{c}\right\rbrace $
+	$ I = \left\lbrace \vec{a}, \vec{b}, \vec{c}\right\rbrace $
 \end{center}
 \begin{center}
-		$A = \left\lbrace\vec{a}\right\rbrace, B =\lbrace\vec{b}\rbrace, C = \lbrace\vec{c}\rbrace \implies A\cup B\cup C = S 
+		$A = \left\lbrace\vec{a}\right\rbrace, B =\lbrace\vec{b}\rbrace, C = \lbrace\vec{c}\rbrace \implies A\cup B\cup C = I 
 	$
 \end{center}
 \begin{center}
@@ -183,7 +183,7 @@ $S = \left\lbrace\vec{a}, \vec{b}, \vec{c}\right\rbrace$
 \end{tikzpicture}
 \end{center}
 \begin{center}
-$S \cap$($A \cup C$) \hspace*{3cm} $S \cap $($A \cup B$) \hspace*{3cm} $S \cap $($B \cup C$)
+$I \cap$($A \cup C$) \hspace*{3cm} $I \cap $($A \cup B$) \hspace*{3cm} $I \cap $($B \cup C$)
 \end{center}
 
 \textbar{In a more mathematically rigorous approach, we may determine whether a set of vectors is linearly independent or linearly dependent. Then, we can look at the trivial and non-trivial solutions of
@@ -199,7 +199,20 @@ The set is linearly dependent if the linear combination contains a non-zero scal
 %%% continue with examples explaining as to why that is the case. %%%
 
 \subsection{Subspaces in $\mathbb{R}^3$}
-\textbar{Let S = $\lbrace{\vec{v}_{1}, \vec{v}_{2}, \vec{v}_{3}\rbrace}$ be a subset of $\mathbb{R}^3$. Then, using the abovementioned methods, we may determine whether the set S is linearly independent or dependent. }
+\textbar{A vector space is a collection of vectors that can be combined and multiplied by scalars in a linearly consistent manner. For instance, the set of all 3-dimensional vectors with real-number coordinates is a vector space, where their components define vector addition and scalar multiplication. Now, what is a subspace? First, we may ponder a subspace as a subset of a vector space. This subset of vectors, in turn, has properties of a vector space. In other words, a subspace is a smaller vector space contained in a larger one. 
+}
+
+
+\begin{center}
+	\subsubsection{Definition of Subspace}
+	\textit{Subspace. A non-empty set $ V \subset \mathbb{R}^n$ is called a subspace if for all $\vec{u}, \vec{v} \in V$ and all scalars k we have:} \\
+	\textit{(1.)} \hspace*{0.1cm} \textit{$\vec{u}+\vec{v} \in V$; and}
+\textit{(2.)} \hspace*{0.1cm} \textit{$k\vec{u} \in V$} \\
+	
+	\end{center}
+
+
+\textbar{Subspaces are equivalent to spans, and this duality permits us to determine whether a set of vectors are linearly independent or dependent. Let's say, S = $\lbrace{\vec{v}_{1}, \vec{v}_{2}, \vec{v}_{3}\rbrace}$ be a subset of $\mathbb{R}^3$. Then, using the abovementioned methods, we may determine whether the set S is linearly independent or dependent. }
 \subsubsection{Linear Independence of a Subspace}
 \begin{center}
 	${S = \lbrace \vec{v}_{1} ,\vec{v}_{2},\vec{v}_{3}  \rbrace \implies \alpha_{1}\vec{v}_{1} + \alpha_{2}\vec{v}_{2} + \alpha_{3}\vec{v}_{3} = \vec{0}}$
@@ -411,7 +424,6 @@ $
 	\end{tikzpicture}
 \end{center}
 \textbar{Much like linear independence, we must express the set that composes such a subspace in a matrix to find if a subspace is linearly dependent. Then utilize reduced row reduction to determine if there is a non-trivial solution. }
-\textbar{To uncover if a subspace is linearly independent, we must express the subspace as a matrix. Then employ reduced row echelon form to determine if there is a trivial solution to the linear combination of the set that composes this subspace.}
 
 \begin{center}
 	$S =  \left\lbrace\begin{bmatrix} 
@@ -492,10 +504,11 @@ $
  \alpha_{2} + \alpha_{3} = 0
 $
 \end{center}
+\subsubsection{Methods of determining if something is linearly independent or dependent}
+\textbar{As a footnote, the reader may have been pondering what means would be for us to find instantly if a set of vectors is linearly dependent or linearly independent. With the starting linear combination, I recommend choosing non-trivial or trivial solutions, which implies linear independence or dependence, then derive what vectors composed the trivial or non-trivial solutions.}
 
 \section{Projections onto Subspaces}
 %\section{Give an example of a set X and a vector $\vec{v}$ in $\mathbb{R}^2$ such that projxv does not exist (i.e. make sense mathematically). Explain your thinking and use a diagram or graph.}
 
 
 \end{document}
-
