@@ -21,6 +21,10 @@
 \usepackage{feynmp-auto}
 \usepackage{breqn}
 \usepackage{graphicx}
+\usepackage{mathtools}
+\newcommand{\vectorproj}[2][]{\textit{proj}_{{#1}}{#2}}
+\newcommand{\vect}{\mathbf}
+
 \newenvironment{amatrix}[1]{%
 	\left(\begin{array}{@{}*{#1}{c}|c@{}}
 	}{%
@@ -509,6 +513,65 @@ $
 
 \section{Projections onto Subspaces}
 %\section{Give an example of a set X and a vector $\vec{v}$ in $\mathbb{R}^2$ such that projxv does not exist (i.e. make sense mathematically). Explain your thinking and use a diagram or graph.}
+\textbar{A projection onto a subspace is a linear transformation that maps a vector onto a subspace, constructing the nearest vector in that subspace to the initial vector. To understand this concept more thoroughly, let us have a mathematical exploration of what a projection is, which may help us develop a greater understanding of this concept in linear algebra. Here we have two mathematical objects in $\mathbb{R}^2$, a vector $\vec{b}$ and a one dimentional subspace in $\mathbb{R}^2$ we denote as $A$. }
 
+\begin{center}
+	\begin{tikzpicture}
+		
+		[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round]
+		%Coordinates
+		%Vectors Parallel to Plane
+		%Beginning of Axis
+		\coordinate (O) at (0,0);
+		%Random Point
+		%%	\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+		
+		%Axis 	
+		\draw[-latex] (-3,0,0) -- (3,0,0) node[pos = 1.05] {$x$};
+		\draw[-latex] (0,-3,0) -- (0,3,0) node[pos = 1.05] {$y$};
+		%%	\draw[draw=black, fill=black] (O) circle (1pt) node[below] {${O}$};
+		
+		%Vectors
+		\draw[-, thick, red] (-3,-1) -- node[pos = 1.05] {$A$} (3,1);
+		%\draw[->, thick, blue] (0,0) -- node[below] {$\vec{c}$} (5,1);
+		\draw[->, thick, blue] (0,0) -- node[pos = 1.15] {$\vec{b}$} (1,1);
+		
+		%	%Random Point
+		%	\draw[-latex, thick] (O) -- (P) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r}$};
+		%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
+		
+	\end{tikzpicture}
+	
+\end{center}
+\textbar{The closest point from $\vec{b}$ to line (A) would be considered $\vectorproj[A]{\vec{b}}$. When we draw this new line, we notice that it is normal to the subspace. In which we may express this newly formed mathematical object as: $\vec{b} - \vectorproj[A]{\vec{b}}$.}
+\begin{center}
+	\begin{tikzpicture}
+		
+	%	[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round]
+		%Coordinates
+		%Vectors Parallel to Plane
+		%Beginning of Axis
+		\coordinate (O) at (0,0);
+		%Random Point
+		%%	\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+		
+		%Axis 	
+		\draw[-latex] (-3,0,0) -- (3,0,0) node[pos = 1.05] {$x$};
+		\draw[-latex] (0,-3,0) -- (0,3,0) node[pos = 1.05] {$y$};
+		%%	\draw[draw=black, fill=black] (O) circle (1pt) node[below] {${O}$};
+		
+		%Vectors
+		\draw[-, thick, red] (-3,-1) -- node[pos = 1.05] {$A$} (3,1);
+		\draw[-, thick, black] (1,1) -- node[right, pos = 1.25] {$\vec{b} -\vectorproj[A]{\vec{b}}$} (1.2,0.4);
+		\draw[->, thick, blue] (0,0) -- node[pos = 1.15] {$\vec{b}$} (1,1);	
+
+		%	%Random Point
+		%	\draw[-latex, thick] (O) -- (P) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r}$};
+		%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
+		
+	\end{tikzpicture}
+	
+\end{center}
+\textbar{With this illustration above, we get a glimpse that the projection of a vector onto a subspace can be thought of as the shadow of the vector on the subspace. For this shadow to accurately depict the projection, we would have to place a light that shines uniformly, and orthogonal to A. }
 
 \end{document}
