@@ -518,7 +518,7 @@ $
 Thus,}
 \begin{center}
 \subsubsection{Definition of Projection}
-\textit{Let $X\subset\mathbb{R}^n$ be a set. The projection of a vector $\vec{v}\in\mathbb{R}^n$ onto $X$, written $\vectorproj[X]{\vec{v}}$, is the closest point in $X$ to $\vec{v}$.}
+\textit{Let $A\subset\mathbb{R}^n$ be a set. The projection of a vector $\vec{b}\in\mathbb{R}^n$ onto $A$, \\ written $\vectorproj[A]{\vec{b}}$, is the closest point in $A$ to $\vec{b}$.}
 			
 \end{center}
 
@@ -597,10 +597,12 @@ Thus,}
 	
 \end{center}
 \textbar{Now rearrange, for the equation to be equal to zero.}
+
+%%%%% DEFINE TRANSPOSE %%%%%
 \begin{center}
 $ \vec{e} = \vec{b} - \vectorproj[A]{\vec{b}}$ 
 \textit{and} $\vectorproj[A]{\vec{b}} = \alpha\vec{a}$
-$\implies \vec{a}^\intercal(\vec{e}) = 0 \implies \vec{a}^\intercal(\vec{b} - \vectorproj[A]{\vec{b}}) = 0 \implies  \vec{a}^\intercal(\vec{b} - \alpha\vec{a}) = 0
+$\implies \vec{a} \cdot \vec{e} = 0 \implies \vec{a}^\intercal\vec{e} = 0 \implies \vec{a}^\intercal(\vec{b} - \vectorproj[A]{\vec{b}}) = 0 \implies  \vec{a}^\intercal(\vec{b} - \alpha\vec{a}) = 0
 $
 \end{center}
 \textbar{The equation equal to zero offers us a step closer to finding the value of $\alpha$, giving us the vector that provides the projection. Now rearrange this equation for $\alpha$.}
@@ -619,16 +621,16 @@ $
 	$ \alpha = \frac{\vec{a}^\intercal\vec{b}}{\vec{a}^\intercal\vec{a}}$ \hspace*{1cm} $\vectorproj[A]{\vec{b}} = \alpha\vec{a}$
 \end{center}
 \begin{center}
-	$ \vectorproj[A]{\vec{b}} = \vec{a}\frac{\vec{a}^\intercal\vec{b}}{\vec{a}^\intercal\vec{a}}
+	$ \vectorproj[A]{\vec{b}} = \vec{a}\frac{\vec{a}^\intercal\vec{b}}{\vec{a}^\intercal\vec{a}} \implies \vectorproj[A]{\vec{b}} = \vec{a}\frac{\vec{a} \cdot \vec{b}}{\vec{a} \cdot \vec{a}}
 	$
 \end{center}
-\textbar{Now with some understanding of the mathematical machinery pertaining to projections. How does one break a projection mathematically? Before that, I would like to look at a more intuitive argument for the functioning of projections.}
+\textbar{Now with some understanding of the mathematical machinery behind projections. How does one break a projection mathematically? Before that, I would like to look at a more intuitive argument for the functioning of projections.}
 
 \clearpage
 
 
 
-\textbar{With this illustration above, we get a glimpse that the projection of a vector onto a subspace can be thought of as the shadow of the vector on the subspace. For this shadow to accurately depict the projection, we must place a light that shines uniformly orthogonal to $A$. This fact offers us insight into this particular projection, which is that it has a unique solution. The solution is unique since only one shadow is cast, not multiple.}
+\textbar{With this illustration above, we get a glimpse that the projection of a vector onto a subspace can be thought of as the shadow of the vector on the subspace. For this shadow to accurately depict the projection, we must place a light that shines uniformly orthogonal to $A$. This fact offers us insight into this particular projection, which is that it has a unique solution. The solution is unique since only one shadow is cast, not multiple or none at all.}
 
 
 
