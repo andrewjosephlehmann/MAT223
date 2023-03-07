@@ -513,7 +513,17 @@ $
 
 \section{Projections onto Subspaces}
 %\section{Give an example of a set X and a vector $\vec{v}$ in $\mathbb{R}^2$ such that projxv does not exist (i.e. make sense mathematically). Explain your thinking and use a diagram or graph.}
-\textbar{A projection onto a subspace is a linear transformation that maps a vector onto a subspace, constructing the nearest vector in that subspace to the initial vector. To understand this concept more thoroughly, let us have a mathematical exploration of what a projection is, which may help us develop a greater understanding of this concept in linear algebra. Here we have two mathematical objects in $\mathbb{R}^2$, a vector $\vec{b}$ and a one dimentional subspace in $\mathbb{R}^2$ we denote as $A$. }
+\textbar{A projection onto a subspace is a linear transformation that maps a vector onto a subspace, constructing the nearest vector in that subspace to the initial vector.
+
+Thus,}
+\begin{center}
+\subsubsection{Definition of Projection}
+\textit{Let $X\subset\mathbb{R}^n$ be a set. The projection of a vector $\vec{v}\in\mathbb{R}^n$ onto $X$, written $\vectorproj[X]{\vec{v}}$, is the closest point in $X$ to $\vec{v}$.}
+			
+\end{center}
+
+
+\textbar{To understand this concept more thoroughly, let us have a mathematical exploration of what a projection is, which may help us develop a greater understanding of this concept in linear algebra. Here we have two mathematical objects in $\mathbb{R}^2$, a vector $\vec{b}$ and a one dimentional subspace in $\mathbb{R}^2$ we denote as $A$. }
 
 \begin{center}
 	\begin{tikzpicture}
@@ -543,7 +553,7 @@ $
 	\end{tikzpicture}
 	
 \end{center}
-\textbar{The closest point from $\vec{b}$ to line (A) would be considered $\vectorproj[A]{\vec{b}}$. When we draw this new line, we notice that it is normal to the subspace. In which we may express this newly formed mathematical object as: $\vec{b} - \vectorproj[A]{\vec{b}}$.}
+\textbar{The closest point from $\vec{b}$ to line (A) would be considered $\vectorproj[A]{\vec{b}}$. When we draw this new line, we notice that it is normal to the subspace.}
 \begin{center}
 	\begin{tikzpicture}
 		
@@ -562,7 +572,7 @@ $
 		
 		%Vectors
 		\draw[-, thick, red] (-3,-1) -- node[pos = 1.05] {$A$} (3,1);
-		\draw[-, thick, black] (1,1) -- node[right, pos = 1.25] {$\vec{b} -\vectorproj[A]{\vec{b}}$} (1.2,0.4);
+		\draw[-, thick, black] (1,1) -- node[right, pos = 1.25] {$\vectorproj[A]{\vec{b}}$} (1.2,0.4);
 		\draw[->, thick, blue] (0,0) -- node[pos = 1.15] {$\vec{b}$} (1,1);	
 
 		%	%Random Point
@@ -572,6 +582,56 @@ $
 	\end{tikzpicture}
 	
 \end{center}
-\textbar{With this illustration above, we get a glimpse that the projection of a vector onto a subspace can be thought of as the shadow of the vector on the subspace. For this shadow to accurately depict the projection, we would have to place a light that shines uniformly, and orthogonal to A. }
+\textbar{With the illustration above, one may notice that we inserted a line in black that represents the projection of $\vec{b}$ onto set $A$. We may derive a means of calculating such a projection in this particular scenario. We can think of the line as an error between set $A$ and $\vec{b}$. Therefore let us express this error mathematically as:}
+\begin{center}
+	$	\vec{e} = \vec{b} - \vectorproj[A]{\vec{b}}
+	$
+\end{center}
+
+\textbar{Since the projection is a point in the one-dimensional subspace, we may express it as a multiple of a direction that may span that given subspace.}
+
+\begin{center}
+	$\vectorproj[A]{\vec{b}} = \alpha \vec{a}
+	$
+	\textit{, where $\alpha$ is some scalar}
+	
+\end{center}
+\textbar{Now rearrange, for the equation to be equal to zero.}
+\begin{center}
+$ \vec{e} = \vec{b} - \vectorproj[A]{\vec{b}}$ 
+\textit{and} $\vectorproj[A]{\vec{b}} = \alpha\vec{a}$
+$\implies \vec{a}^\intercal(\vec{e}) = 0 \implies \vec{a}^\intercal(\vec{b} - \vectorproj[A]{\vec{b}}) = 0 \implies  \vec{a}^\intercal(\vec{b} - \alpha\vec{a}) = 0
+$
+\end{center}
+\textbar{The equation equal to zero offers us a step closer to finding the value of $\alpha$, giving us the vector that provides the projection. Now rearrange this equation for $\alpha$.}
+\begin{center}
+	$\vec{a}^\intercal(\vec{b} - \alpha\vec{a}) = 0 \implies \alpha\vec{a}^\intercal\vec{a} - \vec{a}^\intercal\vec{b} = 0 \implies \alpha\vec{a}^\intercal\vec{a} = \vec{a}^\intercal\vec{b}$
+\end{center}
+\begin{center}
+$ \alpha\vec{a}^\intercal\vec{a} = \vec{a}^\intercal\vec{b} \implies \frac{\alpha\vec{a}^\intercal\vec{a}}{\vec{a}^\intercal\vec{a}} = \frac{\vec{a}^\intercal\vec{b}}{\vec{a}^\intercal\vec{a}} \implies \alpha = \frac{\vec{a}^\intercal\vec{b}}{\vec{a}^\intercal\vec{a}}
+$
+\end{center}
+
+\begin{center}
+	\textit{Since we have an expression for projection, we find a means of calculating projection of subspaces by rearranging the expressions we have derived:}
+\end{center}
+\begin{center}
+	$ \alpha = \frac{\vec{a}^\intercal\vec{b}}{\vec{a}^\intercal\vec{a}}$ \hspace*{1cm} $\vectorproj[A]{\vec{b}} = \alpha\vec{a}$
+\end{center}
+\begin{center}
+	$ \vectorproj[A]{\vec{b}} = \vec{a}\frac{\vec{a}^\intercal\vec{b}}{\vec{a}^\intercal\vec{a}}
+	$
+\end{center}
+\textbar{Now with some understanding of the mathematical machinery pertaining to projections. How does one break a projection mathematically? Before that, I would like to look at a more intuitive argument for the functioning of projections.}
+
+\clearpage
+
+
+
+\textbar{With this illustration above, we get a glimpse that the projection of a vector onto a subspace can be thought of as the shadow of the vector on the subspace. For this shadow to accurately depict the projection, we must place a light that shines uniformly orthogonal to $A$. This fact offers us insight into this particular projection, which is that it has a unique solution. The solution is unique since only one shadow is cast, not multiple.}
+
+
+
+\subsection{Infinite shadows cast by one object?}
 
 \end{document}
