@@ -621,19 +621,32 @@ $
 	$ \alpha = \frac{\vec{a}^\intercal\vec{b}}{\vec{a}^\intercal\vec{a}}$ \hspace*{1cm} $\vectorproj[A]{\vec{b}} = \alpha\vec{a}$
 \end{center}
 \begin{center}
-	$ \vectorproj[A]{\vec{b}} = \vec{a}\frac{\vec{a}^\intercal\vec{b}}{\vec{a}^\intercal\vec{a}} \implies \vectorproj[A]{\vec{b}} = \vec{a}\frac{\vec{a} \cdot \vec{b}}{\vec{a} \cdot \vec{a}}
-	$
+	$ \vectorproj[A]{\vec{b}} = \frac{\vec{a}^\intercal\vec{b}}{\vec{a}^\intercal\vec{a}} \vec{a} \implies \vectorproj[A]{\vec{b}} =\frac{\vec{a} \cdot \vec{b}}{\vec{a} \cdot \vec{a}} \vec{a}$
+
 \end{center}
 \textbar{Now with some understanding of the mathematical machinery behind projections. How does one break a projection mathematically? Before that, I would like to look at a more intuitive argument for the functioning of projections.}
 
 \clearpage
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{"../../../../../../../../Desktop/Screenshot 2023-03-07 at 21.33.42 (2)"}
+	\caption{The path traced light in $\mathbb{R}^3$ that depicts $\vec{b}$ as a sphere and set $A$ in red as a two-dimensional subspace.}
+	\label{fig:screenshot-2023-03-07-at-21}
+\end{figure}
+
+\textbar{With this illustration above, we get a glimpse that the projection of a vector onto a subspace can be thought of as the shadow of the vector on the subspace. For this shadow to accurately depict the projection, we must place a light that shines uniformly orthogonal to $A$. This fact offers us insight into this particular projection, which is that it has a unique solution. The solution is unique since only one shadow is cast. 
+	
+In this duality, mathematically breaking down a projection is far more approachable. There are multiple means of doing this in $\mathbb{R}^3$, but in our case, in $\mathbb{R}^2$, it is much more trivial since $\vec{b}$ is a point in space. Yet, the critical concept remains constant, and it is a matter of making the sphere flush with the two-dimensional subspace. With that, we may assume that the sphere is an element of the subspace. Akin to what breaks down a projection in $\mathbb{R}^2$. }
 
 
-
-\textbar{With this illustration above, we get a glimpse that the projection of a vector onto a subspace can be thought of as the shadow of the vector on the subspace. For this shadow to accurately depict the projection, we must place a light that shines uniformly orthogonal to $A$. This fact offers us insight into this particular projection, which is that it has a unique solution. The solution is unique since only one shadow is cast, not multiple or none at all.}
-
+\begin{center}
+	\centering
+	\includegraphics[width=0.5\linewidth]{"../../../../../../../../Desktop/Screenshot 2023-03-07 at 22.03.05"}
+	\label{fig:screenshot-2023-03-07-at-22}
+\end{center}
 
 
 \subsection{Infinite shadows cast by one object?}
 
 \end{document}
+
