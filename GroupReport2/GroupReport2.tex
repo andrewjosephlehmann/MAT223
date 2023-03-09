@@ -522,7 +522,6 @@ Thus,}
 			
 \end{center}
 
-
 \textbar{To understand this concept more thoroughly, let us have a mathematical exploration of what a projection is, which may help us develop a greater understanding of this concept in linear algebra. Here we have two mathematical objects in $\mathbb{R}^2$, a vector $\vec{b}$ and a one dimentional subspace in $\mathbb{R}^2$ we denote as $A$. }
 
 \begin{center}
@@ -639,8 +638,11 @@ $
 \end{center}
 
 \textbar{With this illustration above, we get a glimpse that the projection of a vector onto a subspace can be thought of as the shadow of the vector on the subspace. For this shadow to accurately depict the projection, we must place a light that shines uniformly orthogonal to $A$. This fact offers us insight into this particular projection, which is that it has a unique solution. The solution is unique since only one shadow is cast. 
-	
-In this duality, conceptually breaking down a projection is far more approachable. There are multiple means of doing this in $\mathbb{R}^3$, but in our case, in $\mathbb{R}^2$, it is much more trivial since $\vec{b}$ is a point in space. Yet, the critical concept remains constant, and it is a matter of making the sphere flush with the two-dimensional subspace. We may assume that the sphere is an element of the subspace. Akin to what breaks down a projection in $\mathbb{R}^2$. }
+
+\subsubsection{A non-existent shadow}
+
+In this duality, conceptually breaking down a projection is far more approachable. This would occur when there is no set for the object to cast its shadow. However, the concept of projection being a shadow is troublesome since whenever an object becomes an element of a two-dimensional subspace, it will no longer cast a shadow onto that subspace. The projection of such a vector is an element of a subspace onto that same subspace will reveal the the vector we initially projected.
+}
 
 
 \begin{center}
@@ -653,7 +655,6 @@ In this duality, conceptually breaking down a projection is far more approachabl
 	\label{fig:screenshot-2023-03-07-at-21}
 \end{center}
 
-
-
-
+\subsubsection{Contradiction to the duality of projections and shadows}
+\textbar{Let us contrast this with an example in $\mathbb{R}^2$ that demonstrates this contradiction: }
 \end{document}
