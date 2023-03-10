@@ -639,9 +639,9 @@ $
 
 \textbar{With this illustration above, we get a glimpse that the projection of a vector onto a subspace can be thought of as the shadow of the vector on the subspace. For this shadow to accurately depict the projection, we must place a light that shines uniformly orthogonal to $A$. This fact offers us insight into this particular projection, which is that it has a unique solution. The solution is unique since only one shadow is cast. 
 
-\subsubsection{A non-existent shadow}
+\subsubsection{A Non-Existent Shadow}
 
-In this duality, conceptually breaking down a projection is far more approachable. This would occur when there is no set for the object to cast its shadow. However, the concept of projection being a shadow is troublesome since whenever an object becomes an element of a two-dimensional subspace, it will no longer cast a shadow onto that subspace. The projection of such a vector is an element of a subspace onto that same subspace will reveal the the vector we initially projected.
+In this duality, conceptually breaking down a projection is far more approachable. This would occur when there is no set for the object to cast its shadow. However, the concept of projection being a shadow is troublesome since whenever an object becomes an element of a two-dimensional subspace, it will no longer cast a shadow onto that subspace. The projection of such a vector is an element of a subspace onto that same subspace will reveal the vector we initially projected.
 }
 
 
@@ -655,6 +655,64 @@ In this duality, conceptually breaking down a projection is far more approachabl
 	\label{fig:screenshot-2023-03-07-at-21}
 \end{center}
 
-\subsubsection{Contradiction to the duality of projections and shadows}
+\subsubsection{Contradiction to The Duality of Projections and Shadows}
 \textbar{Let us contrast this with an example in $\mathbb{R}^2$ that demonstrates this contradiction: }
+
+\begin{center}
+	\textit{Choose a direction vector $\vec{d}$ that is not equal the zero vector in $\mathbb{R}^2$.} \\
+	\textit{This direction vector will span one-dimensional subspace set $B$.} $B = span\left\lbrace \vec{d} \right\rbrace $ \\
+	\textit{Then, choose another vector $\vec{c}$ that is colinear to our direction vector.}
+	$ \vec{c} = \left\lbrace k\vec{d}: k \neq 1\right\rbrace$ \\
+	\textit{Consider an arbitrary direction vector: }
+	$\vec{d} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$ \\
+	\textit{Consider scalar multiple of direction vector:}
+	$k = 2$ 
+	\textit{... Then,} $\vec{c} = 2\vec{d} = \begin{bmatrix} 2 \\ 2 \end{bmatrix}$ \\
+	
+	\textit{We may compute the result of projecting set $B$ onto $\vec{c}$ with the formula we derived for projections.}
+	
+
+		$\vectorproj[B]{\vec{c}} =\frac{\vec{d} \cdot \vec{c}}{\vec{d} \cdot \vec{d}} \vec{d} = 2\vec{d}  = \begin{bmatrix} 2 \\ 2 \end{bmatrix} = \vec{c}$
+
+		$Q.E.D.$
+\end{center}
+\textbar{Mathematically, the projection exists in the arbitrary one-dimensional subspace, while our mental model of a projection being a shadow says the projection cannot exist. Therefore, exceptions exist to our mental model of a projection being a shadow.}
+\subsection{A Non-Existent Projection onto an Arbitrary Subspace}
+\textbar{In section 2.1, we proposed we could construct a projection that did not exist. The assertion predicates the notion that if a set contained no vectors, there would be nothing for another given vector, which is not in the set, to project itself onto the set. Thus we need a mathematical object that relates to no elements in a set. A set with no elements is called an empty set $\emptyset$.}
+
+\begin{center}
+
+
+	\begin{tikzpicture}
+		
+		[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round]
+		%Coordinates
+		%Vectors Parallel to Plane
+		%Beginning of Axis
+		\coordinate (O) at (0,0);
+		%Random Point
+		%%	\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+		
+		%Axis 	
+		\draw[-latex] (-3,0,0) -- (3,0,0) node[above] {$x$};
+		\draw[-latex] (0,-3,0) -- (0,3,0) node[pos = 1.05] {$y$};
+		%%	\draw[draw=black, fill=black] (O) circle (1pt) node[below] {${O}$};
+		
+		%Vectors
+		%\draw[-, thick, red] (-3,-1) -- node[pos = 1.05] {$A$} (3,1);
+		%\draw[->, thick, blue] (0,0) -- node[below] {$\vec{c}$} (5,1);
+		%\draw[->, thick, blue] (0,0) -- node[pos = 1.15] {$\vec{b}$} (1,1);
+		
+		%	%Random Point
+		%	\draw[-latex, thick] (O) -- (P) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r}$};
+		%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
+		
+	\end{tikzpicture} 
+	
+\end{center}
+\begin{center}
+\textit{$\emptyset$ in $\mathbb{R}^2$}
+\end{center}
+
+
 \end{document}
