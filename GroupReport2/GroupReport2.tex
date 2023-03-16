@@ -760,5 +760,23 @@ $\vectorproj[X]{\vec{v}}$ $D.N.E.$
 $Q.E.D.$
 \end{center}
 
+\section{A Means of Determining a Non-Standard Basis for a Given Subspace}
+
+\textbar{In the previous Group Report, we outlined the concepts of a basis. In that case, we used standard basis vectors, in which, if we were to take the span of these vectors, it would be equivalent to the set of all vectors in $\mathbb{R}^3$.}
+
+\begin{center}
+	\subsubsection{Definition of Vector Basis}
+	{The vector basis of a vector space is a fundamental concept in linear algebra. It provides a way to understand a vector space's structure by breaking it down into linearly independent vectors, which span composes such a subspace. To be more precise, a vector basis for $X$ is a subset $\mathcal{V}=\left\{{v_1,v_2,\ldots,v_n}\right\}$ of the vectors in $X$ that satisfies two properties:
+		
+		
+		Linear independence: No vector in $\mathcal{V}$ may be expressed as a linear combination of the other vectors in $\mathcal{V}$. Therefore, for any scalars, $\alpha_1,\alpha_2,\ldots,\alpha_n$, the equation $\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_nv_n=0$ holds if and only if $c_1=c_2=\cdots=c_n=0$.
+		
+		Tracing the Subspace: This suggests that every vector in $X$ can be written as a linear combination of the vectors in $\mathcal{V}$. In other words, for any vector $x\in X$, there exist scalars $\alpha_1,\alpha_2,\ldots,\alpha_n$ such that $x=\alpha_1v_1+\alpha_2v_2+\cdots+\alpha_nv_n$.
+		
+	The first property assures that the vectors in $\mathcal{V}$ are linearly independent and not redundant because they cannot be expressed as a linear combination of each other. The second property ensures that the vectors in $\mathcal{V}$ are sufficient to describe every vector in $X$. These two properties define the vectors in $\mathcal{V}$ as the fundamental structure of $X$.
+		
+	}
+\end{center}
+
 
 \end{document}
