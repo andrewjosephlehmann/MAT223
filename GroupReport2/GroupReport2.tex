@@ -678,7 +678,7 @@ In this duality, conceptually breaking down a projection is far more approachabl
 \end{center}
 \textbar{Mathematically, the projection exists in the arbitrary one-dimensional subspace, while our mental model of a projection being a shadow says the projection cannot exist. Therefore, exceptions exist to our mental model of a projection being a shadow.}
 \subsection{A Non-Existent Projection onto an Arbitrary Subspace}
-\textbar{In section 2.1, we proposed we could construct a projection that did not exist. The assertion predicates the notion that if a set contained no vectors, there would be nothing for another given vector, which is not in the set, to project itself onto the set. Thus we need a mathematical object that relates to no elements in a set. A set with no elements is called an empty set $\emptyset$.}
+\textbar{In section 2.1, we proposed we could construct a projection that did not exist. The assertion predicates the notion that if a set contained no vectors, there would be nothing for another given vector, to project itself onto the set. Thus we need a mathematical object that relates to no elements in a set. A set with no elements is called an empty set $\emptyset$.}
 
 \begin{center}
 
@@ -712,6 +712,52 @@ In this duality, conceptually breaking down a projection is far more approachabl
 \end{center}
 \begin{center}
 \textit{$\emptyset$ in $\mathbb{R}^2$}
+\end{center}
+\textbar{Let us make a non-existent projection, for this we shall refer to the empty set $\emptyset$ as set $X$, and let us choose an arbitrary vector $\vec{v}$ in $\mathbb{R}^2$. Now if we were to project the vector $\vec{v}$ onto set $X$, the projection would not exist since there is no closest vector in set $X$ to $\vec{v}$.}
+\begin{center}
+	
+	
+	\begin{tikzpicture}
+		
+		[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round]
+		%Coordinates
+		%Vectors Parallel to Plane
+		%Beginning of Axis
+		\coordinate (O) at (0,0);
+		%Random Point
+		%%	\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+		
+		%Axis 	
+		\draw[-latex] (-3,0,0) -- (3,0,0) node[above] {$x$};
+		\draw[-latex] (0,-3,0) -- (0,3,0) node[pos = 1.05] {$y$};
+		%%	\draw[draw=black, fill=black] (O) circle (1pt) node[below] {${O}$};
+		
+		%Vectors
+		%\draw[-, thick, red] (-3,-1) -- node[pos = 1.05] {$A$} (3,1);
+		\draw[->, thick, red] (0,0) -- node[pos=1.1] {$\vec{v}$} (1,1);
+		%\draw[->, thick, blue] (0,0) -- node[pos = 1.15] {$\vec{b}$} (1,1);
+		
+		%	%Random Point
+		%	\draw[-latex, thick] (O) -- (P) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r}$};
+		%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
+		
+	\end{tikzpicture} 
+	
+\end{center}
+
+\begin{center}
+$X = \emptyset
+$
+\textit{and}
+$\vec{v} = \begin{bmatrix}
+	v_1 \\
+	v_2
+\end{bmatrix}
+$
+$\implies$
+$\vectorproj[X]{\vec{v}}$ $D.N.E.$
+
+$Q.E.D.$
 \end{center}
 
 
