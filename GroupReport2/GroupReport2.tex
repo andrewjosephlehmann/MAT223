@@ -762,7 +762,7 @@ $Q.E.D.$
 
 \section{A Means of Determining a Non-Standard Basis for a Given Subspace}
 
-\textbar{In the previous Group Report, we outlined the concepts of a basis. In that case, we used standard basis vectors, in which, if we were to take the span of these vectors, it would be equivalent to the set of all vectors in $\mathbb{R}^3$.}
+\textbar{In the previous Group Report, we outlined the concepts of a basis. In that case, we used three standard basis vectors, in which, if we were to take the span of these vectors, it would be equivalent to the set of all vectors in $\mathbb{R}^3$.}
 
 \begin{center}
 	\subsubsection{Definition of Vector Basis}
@@ -777,6 +777,51 @@ $Q.E.D.$
 		
 	}
 \end{center}
+\textbar{How does one differ from a standard basis vector? We know that a standard basis vector is a standard basis, an orthonormal vector basis in which each basis vector has a single nonzero entry with value 1. Therefore the basis vectors in $\mathbb{R}^3$ are:}
+\begin{center}
+$\mathbb{R}^3 = span\left\{\vec{e}_1,\vec{e}_2,\vec{e}_3\right\} = span\left\{
+\begin{bmatrix} 
+	1 \\
+	0 \\
+	0
+	\end{bmatrix},
+\begin{bmatrix}
+	0 \\
+	1 \\
+	0
+\end{bmatrix},
+\begin{bmatrix}
+	0 \\
+	0 \\
+	1
+\end{bmatrix}
+\right\}
+$
+\end{center}
+\textbar{To receive non-standard basis vectors, let us choose vectors that are not equal to $\left\{\vec{e}_1,\vec{e}_2,\vec{e}_3\right\}$. With this in mind, let us choose three linearly independent vectors in R^3. From section one, we learned that a set of vectors are linearly independent if their solution is trivial. Therefore from the vectors we choose, we may verify if they are linearly independent. 
+	
+	Therefore let us call our set of non-standard basis vectors $\mathcal{B}$.
+}
+\begin{center}
+\textit{Let,}
+$\mathcal{B} = \left\{\vec{b}_1,\vec{b}_2, \vec{b}_3\right\} = \left\{\begin{bmatrix} 
+	1 \\
+	2 \\
+	3
+\end{bmatrix},
+\begin{bmatrix}
+	4 \\
+	5 \\
+	6
+\end{bmatrix},
+\begin{bmatrix}
+	7 \\
+	8 \\
+	0
+\end{bmatrix} \right\}
+$
+\end{center}
+\textbar{Now let us verify if this set is linearly independent by determining if there is a trivial solution to this set of vectors: }
 
 
 \end{document}
