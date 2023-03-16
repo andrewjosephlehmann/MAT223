@@ -46,6 +46,7 @@
 \begin{document}
 	\maketitle
 	\textit{Group report 2 iterates upon the concepts introduced in Group Report 1. Hence it is advised to read Group Report 1 before Group Report 2. }
+	\newpage
 	\tableofcontents
 \clearpage 
 \section{Linear Independence and Dependence of a Set of Vectors}
@@ -923,4 +924,97 @@ $
 $z = 3\hat{i} + 6\hat{j}
 $
 \end{center} 
+
+\section{Subspaces}
+\subsubsection{Definition of Subspaces}
+\subsubsection{Proving Whether Something Is a Subspace}
+
+\section{Proving $P$ is a Subspace Using The Definition of Subspace}
+\textbar{In section two, when deriving the projection of a vector onto a set of vectors, we accidentally came across the normal form. Although this form can describe many things, in section two, it was intended to represent a one-dimensional subspace. Now in section five, we will prove that a plane expressed in normal form is a subspace. Continuing derivation of normal form from, section 2: }
+
+\begin{center}
+	$\vec{a} \cdot \vec{e} = 0 \implies \vec{a}^\intercal\vec{e} = 0 \implies \vec{a}^\intercal(\vec{b} - \vectorproj[A]{\vec{b}}) = 0 \implies  \vec{a}^\intercal(\vec{b} - \alpha\vec{a}) = 0
+	$ 
+	
+	
+	$\vec{a}^\intercal(\vec{b} - \alpha\vec{a}) = 0 \implies \vec{a} \cdot{(\vec{b} - \vec{c})} = 0
+	$
+ \subsubsection{Normal Form of a Line}	
+ 
+\textit{A line $l \subset \mathbb{R}^2$ is expressed in normal form if there exist vectors $\vec{a}$ and $\vec{c}$ so that $l$ is the solution set to the equation:}
+
+	$\vec{a} \cdot{(\vec{b} - \vec{c})} = 0
+	$
+	
+\textit{The equation $\vec{a} \cdot{(\vec{b} - \vec{c})} = 0$ is called normal form of $l$.} 
+	
+\end{center}
+
+\textbar{Now we have derived the normal form, let us use this form of describing subspaces to prove that a plane is a subspace in $\mathbb{R}^3$. Let P be the plane given by: }
+\begin{center}
+	$ P =
+\begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix} \cdot
+\left(
+\begin{bmatrix} x \\ y \\ z \end{bmatrix} -
+\begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
+\right) = 0
+$
+
+\end{center}
+\textbar{Prove $P$ is a subspace using the definition of subspace.}
+
+\begin{center}
+$ \implies
+\begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix} \cdot
+\left(
+\begin{bmatrix} x \\ y \\ z \end{bmatrix}\right)
+-
+\begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix} \cdot
+\left(
+\begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
+\right) = 0
+$
+
+$\implies 2x + y + x - 0 - 0 - 0 = 0
+$
+
+$\implies 2x + y + x = 0
+$
+\end{center}
+\textbar{For $P$ in the subspace, there are three main points to satisfy for all $\vec{u}, \vec{v} \in P$ and all scalars $k$: 
+	
+1. $\vec{0}$ is in $P$ (non-emptiness, additive identity)
+
+2. $\vec{u} + \vec{v} \in P$ (closed with respect to vector addition)
+
+3. $k\vec{u} \in P$ (closed with respect to scalar multiplication)
+
+$\cdot$ First point:
+
+$P$ does not contain the zero vector because if $x,y,z$ equal 0
+
+$\implies 2x+ y +z = 0 $
+
+$\implies 2 \cdot 0 + 0 + 0 = 0$ 
+
+$\implies 0 = 0$
+
+$\cdot$ Second point: 
+
+We will take arbitrary points $\begin{bmatrix} x_1 \\ y_1 \\ z_1 \end{bmatrix}$ and $\begin{bmatrix} x_2 \\ y_2 \\ z_2 \end{bmatrix}$ which lie on $P$ consider $\begin{bmatrix} x_1 \\ y_1 \\ z_1 \end{bmatrix} + \begin{bmatrix} x_2 \\ y_2 \\ z_2 \end{bmatrix} = \begin{bmatrix} x_1 + x_2 \\ y_1 + y_2 \\ z_1 + z_2 \end{bmatrix}$ and we will use $2x + y + z = 0$
+By substituting: 
+
+$2(x_1 + x_2) + (y_1 + y_2) + (z_1 + z_2) = 0$
+
+$(2x_1 + y_1 + z_1) + (2x_2 + y_2 + z_2) = 0$
+
+Which proves closed under addition. 
+
+$\cdot$ Third Point:
+
+Consider $\begin{bmatrix} x_1 \\ y_1 \\ z_1 \end{bmatrix} + \begin{bmatrix} x_2 \\ y_2 \\ z_2 \end{bmatrix}$
+
+
+}
+
 \end{document}
