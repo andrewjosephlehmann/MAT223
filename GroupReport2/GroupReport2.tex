@@ -779,7 +779,7 @@ $Q.E.D.$
 \end{center}
 \textbar{How does one differ from a standard basis vector? We know that a standard basis vector is a standard basis, an orthonormal vector basis in which each basis vector has a single nonzero entry with value 1. Therefore the basis vectors in $\mathbb{R}^3$ are:}
 \begin{center}
-$\mathbb{R}^3 = span\left\{\vec{e}_1,\vec{e}_2,\vec{e}_3\right\} = span\left\{
+$\mathbb{R}^3 = span\left\{\hat{i},\hat{j},\hat{k}\right\} = span\left\{
 \begin{bmatrix} 
 	1 \\
 	0 \\
@@ -798,7 +798,7 @@ $\mathbb{R}^3 = span\left\{\vec{e}_1,\vec{e}_2,\vec{e}_3\right\} = span\left\{
 \right\}
 $
 \end{center}
-\textbar{To receive non-standard basis vectors, let us choose vectors that are not equal to $\left\{\vec{e}_1,\vec{e}_2,\vec{e}_3\right\}$. With this in mind, let us choose three linearly independent vectors in R^3. From section one, we learned that a set of vectors are linearly independent if their solution is trivial. Therefore from the vectors we choose, we may verify if they are linearly independent. 
+\textbar{To receive non-standard basis vectors, let us choose vectors that are not equal to $\left\{\hat{i},\hat{j},\hat{k}\right\}$. With this in mind, let us choose three linearly independent vectors in $\mathbb{R}^3$. From section one, we learned that a set of vectors are linearly independent if their solution is trivial. Therefore from the vectors we choose, we may verify if they are linearly independent. 
 	
 	Therefore let us call our set of non-standard basis vectors $\mathcal{B}$.
 }
@@ -822,6 +822,105 @@ $\mathcal{B} = \left\{\vec{b}_1,\vec{b}_2, \vec{b}_3\right\} = \left\{\begin{bma
 $
 \end{center}
 \textbar{Now let us verify if this set is linearly independent by determining if there is a trivial solution to this set of vectors: }
+\begin{center}
+$\begin{bmatrix}
+	1 & 4 & 7 \\
+	2& 5 & 8 \\
+	3 & 6 & 0
+\end{bmatrix} R_{2} = R_{2} - R_{1} \rightarrow 
+\begin{bmatrix}
+	1 & 4 & 7 \\
+	0 & -3 & -6 \\
+	3 & 6& 0
+\end{bmatrix} R_{3} = R_{3} + 3R_{1} \rightarrow 
+\begin{bmatrix}
+	1 & 4 & 7 \\
+	0 & -2 & -2 \\
+	0 & -6 & -21
+\end{bmatrix}$ 
+\end{center}
 
+\begin{center}
+	$
+\begin{bmatrix}
+	1 & 4 & 7 \\
+	0 & -2 & -2 \\
+	0 & -6 & -21
+\end{bmatrix}  R_{2} = \frac{-R_2}{3}  \rightarrow 
+\begin{bmatrix}
+	1 & 4 & 7 \\
+	0 & 1 & 2 \\
+	0 & -6 & -21
+\end{bmatrix}  R_{1} = R_{1} - 4R_{2}  \rightarrow
+\begin{bmatrix}
+	1 & 0 & -1 \\
+	0 & 1 & 2 \\
+	0 & -6 & -21
+\end{bmatrix}$  
 
+\end{center}
+\begin{center}
+	$\begin{bmatrix}
+		1 & 0 & -1 \\
+		0 & 1 & 2 \\
+		0 & -6 & -21
+	\end{bmatrix}  R_{3} = R_{3} + 6R_{2}  \rightarrow
+\begin{bmatrix}
+	1 & 0 & -1 \\
+	0 & 1 & 2 \\
+	0 & 0 & -9
+\end{bmatrix}  R_{3} = \frac{-R_3}{9}  \rightarrow
+\begin{bmatrix}
+	1 & 0 & -1 \\
+	0 & 1 & 2 \\
+	0 & 0 & 1
+\end{bmatrix} 
+$
+\end{center}
+
+\begin{center}
+$\begin{bmatrix}
+	1 & 0 & -1 \\
+	0 & 1 & 2 \\
+	0 & 0& 1
+\end{bmatrix}  R_{1} = R_{1} + R_{3}  \rightarrow
+\begin{bmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & 2 \\
+	0 & 0& 1
+\end{bmatrix} R_{2} = R_{2} - 2R_{3}  \rightarrow
+\begin{bmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0& 1
+\end{bmatrix}
+$
+\end{center}
+\textit{This reduced row echelon indicates that the vectors in this set $\mathcal{B}$ are linearly independent. Since:}
+\begin{center}
+	$\alpha_{1} = \alpha_{2} = \alpha_{3} = 0$
+\end{center}
+
+\textbar{From this, we can conclude that the set satisfies the first property. We must verify if it can span the subspace $\mathbb{R}^3$.
+	In addition, Finding a unique set of coefficients $\alpha_1, \alpha_2, ..., \alpha_n$ for each vector in the subspace is unnecessary. As long as some coefficients work, the set of vectors is considered to span the subspace. Therefore let us find these coefficients:}
+\begin{center}
+$(x,y,z) = \hat{i}(1,2,3) + \hat{j}(4,5,6) + \hat{k}(7, 8, 0)
+$
+
+$(x,y,z) = ((\hat{i} + 4\hat{j} + 7\hat{k}), (2\hat{i} + 5\hat{j} + 8\hat{k}), (3\hat{i} + 6\hat{j}))
+$
+\end{center} 
+
+\textbar{Now we established their relation to the standard basis vectors, which we know spans the subspace of $\mathbb{R}^3$. This fact is beneficial since the difference between these non-standard basis vectors is only the coefficients of {$\hat{i}, \hat{j}, \hat{k}$}.}
+
+\begin{center}
+$x = \hat{i} + 4\hat{j} + 7\hat{k} 
+$
+
+$y = 2\hat{i} + 5\hat{j} + 8\hat{k}
+$
+
+$z = 3\hat{i} + 6\hat{j}
+$
+\end{center} 
 \end{document}
