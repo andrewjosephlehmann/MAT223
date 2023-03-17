@@ -631,7 +631,7 @@ $
 
 \begin{center}
 	\centering
-	\includegraphics[width=0.5\linewidth]{"../../../../../../../../Desktop/Screenshot 2023-03-07 at 21.33.42 (2)"}
+	\includegraphics[width=0.5\linewidth]{"Screenshot 2023-03-07 at 21.33.42 (2)"}
 \end{center}
 \begin{center}
 	\textit{Illustration: Behaviour of path traced light in $\mathbb{R}^3$ that depicts $\vec{b}$ as a sphere and set $A$ in red as a two-dimensional subspace.}
@@ -648,7 +648,7 @@ In this duality, conceptually breaking down a projection is far more approachabl
 
 \begin{center}
 	\centering
-	\includegraphics[width=0.5\linewidth]{"../../../../../../../../Desktop/Screenshot 2023-03-07 at 22.03.05"}
+	\includegraphics[width=0.5\linewidth]{"Screenshot 2023-03-07 at 22.03.05"}
 	\label{fig:screenshot-2023-03-07-at-22}
 \end{center}
 \begin{center}
@@ -779,6 +779,38 @@ $Q.E.D.$
 	}
 \end{center}
 \textbar{How does one differ from a standard basis vector? We know that a standard basis vector is a standard basis, an orthonormal vector basis in which each basis vector has a single nonzero entry with value 1. Therefore the basis vectors in $\mathbb{R}^3$ are:}
+
+\begin{center}
+\begin{tikzpicture}
+	
+		[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round]
+		%Coordinates
+		%Vectors Parallel to Plane
+		%Beginning of Axis
+		\coordinate (O) at (0,0,0);
+		%Random Point
+		\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+		
+		%Axis 	
+		\draw[-latex] (-2.5,0,0) -- (2.5,0,0) node[pos = 1.05] {$x$};
+		\draw[-latex] (0,-2,0) -- (0,2,0) node[pos = 1.05] {$y$};
+		\draw[-latex] (0,0,-2) -- (0,0,2) node[pos = 1.05] {$z$};
+		\draw[draw=black, fill=black] (O) circle (1pt) node[below] {${O}$};
+		
+		%Basis vectors
+		\draw[->, thick, green] (0,0,0) -- (0,0,1) node[pos = 1.2] {$\hat{i}$};
+		\draw[->, thick, blue] (0,0,0) -- (0,1,0) node[pos = 1.2]{$\hat{j}$};
+		\draw[->, thick, red] (0,0,0) -- (1,0,0) node[pos = 1.2]{$\hat{k}$};
+		
+		%	%Random Point
+		%	\draw[-latex, thick] (O) -- (P) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r}$};
+		%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
+	
+\end{tikzpicture}
+\end{center}
+
+
+
 \begin{center}
 $\mathbb{R}^3 = span\left\{\hat{i},\hat{j},\hat{k}\right\} = span\left\{
 \begin{bmatrix} 
@@ -802,6 +834,35 @@ $
 \textbar{To receive non-standard basis vectors, let us choose vectors that are not equal to $\left\{\hat{i},\hat{j},\hat{k}\right\}$. With this in mind, let us choose three linearly independent vectors in $\mathbb{R}^3$. From section one, we learned that a set of vectors are linearly independent if their solution is trivial. Therefore from the vectors we choose, we may verify if they are linearly independent. 
 	
 	Therefore let us call our set of non-standard basis vectors $\mathcal{B}$.
+\begin{center}
+\begin{tikzpicture}
+	
+		[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round]
+		%Coordinates
+		%Vectors Parallel to Plane
+		%Beginning of Axis
+		\coordinate (O) at (0,0,0);
+		%Random Point
+		\node[outer sep = 1pt, inner sep = 1pt] (P) at (2.5,1,5.5) {};
+		
+		%Axis 	
+		\draw[-latex] (-2.5,0,0) -- (2.5,0,0) node[pos = 1.05] {$x$};
+		\draw[-latex] (0,-2,0) -- (0,2,0) node[pos = 1.05] {$y$};
+		\draw[-latex] (0,0,-2) -- (0,0,2) node[pos = 1.05] {$z$};
+		\draw[draw=black, fill=black] (O) circle (1pt) node[below] {${O}$};
+		
+		%Basis vectors
+		\draw[->, thick, green] (0,0,0) -- (0.2,0.4,0.6) node[pos = 1.2] {$\hat{i}$};
+		\draw[->, thick, blue] (0,0,0) -- (0.8,1.0,1.2) node[pos = 1.2]{$\hat{j}$};
+		\draw[->, thick, red] (0,0,0) -- (1.4,1.6,0) node[pos = 1.2]{$\hat{k}$};
+		
+		%	%Random Point
+		%	\draw[-latex, thick] (O) -- (P) node[pos=0.45, shift={(0.1,0.3)}] {$\vb{r}$};
+		%	\draw[draw=black, fill=black] (P) circle (1pt) node[above right] {$\mathrm{P}$};
+	
+\end{tikzpicture}
+\end{center}
+ 
 }
 \begin{center}
 \textit{Let,}
@@ -924,10 +985,84 @@ $
 $z = 3\hat{i} + 6\hat{j}
 $
 \end{center} 
+\subsubsection{The Identity of a Subspace} 
+\textbar{When we used reduced echelon form, we found that though the basis vectors appear different from the standard basis vectors at a glance, they reduce to the same matrix. Let us call this relationship between the two the identity of $\mathbb{R}^3$:}
+\begin{center}
+$I_{3\times3}=\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+$
+\end{center} 
+
+\textbar{More broadly, we shall call this \textit{the identity matrix}, which is commonly utilized in the field of linear algebra. Interestingly, when we multiply the identity matrix by our non-standard basis vectors, we receive the non-standard basis vectors. }
+\begin{center}
+$ I_{3\times3}\mathcal{B} = \mathcal{B}
+$
+
+$ \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 0  \end{bmatrix} = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 0  \end{bmatrix}
+$
+\end{center}
+\begin{center} 
+$\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 0 \end{bmatrix}\begin{bmatrix} \hat{i} \\ \hat{j} \\ \hat{k} \end{bmatrix} =\begin{bmatrix} \hat{i} & 2\hat{i} & 3\hat{i} \\ 4\hat{j} & 5\hat{j} & 6\hat{j} \\ 7\hat{k} & 8\hat{k} & 0 \end{bmatrix} 
+$
+\end{center}
+\textbar{With this, we can observe the scalar multiples of $\hat{i}, \hat{j}, \hat{k}$ according to each spacial element in the subspace. In summary, multiplying the set of vectors by the identity matrix is a more rapid means of finding the values of (x, y,z).}
+
+
+
+
+
+
+
+%%%%% We can talk about how when we use reduced row echelon form we uncover the 3x3 indentity matrix, which happens to be the standard basis vectors. Therefore this is another means of establishing a moreso sameness between using non-standard basis vectors and standard basis vectors since they share the same identity matrix. %%% 
+
+
 
 \section{Subspaces}
+\textbar{}
 \subsubsection{Definition of Subspaces}
+\textbar{To properly answer this question, it is important to reflect on the definition of subspace:}
+
+\begin{center}
+\textit{Subspace. A non-empty set $ V \subset \mathbb{R}^n$ is called a subspace if for all $\vec{u}, \vec{v} \in V$ and all scalars k we have:} \\
+    \textit{(1.)} \hspace*{0.1cm} \textit{$\vec{0} \in V$}
+	\textit{(2.)} \hspace*{0.1cm} \textit{$\vec{u}+\vec{v} \in V$; and}
+\textit{(3.)} \hspace*{0.1cm} \textit{$k\vec{u} \in V$} \\
+\end{center}
+
 \subsubsection{Proving Whether Something Is a Subspace}
+\textbar{For $S$ to be a subspace, there are three main points to satisfy for all $\vec{u}, \vec{v} \in S$ and all scalars $k$: 
+	
+1. $\vec{0}$ is in $S$ (non-emptiness, additive identity)
+
+2. $\vec{u} + \vec{v} \in S$ (closed with respect to vector addition)
+
+3. $k\vec{u} \in S$ (closed with respect to scalar multiplication)
+
+First Point: 
+To satisfy the first condition, S must contain the zero vector.\\
+$\cdot$ If we want to show that S is a subspace, it must be closed under scalar multiplication.\\
+$\cdot$ By selecting 0 as the scalar, 0 would be multiplied (containing the form of (0, 0, 0, ..., 0) in $\mathbb{R}^n$) which calculates to $\vec{0} \in S$.\\
+$\cdot$ We can also simply check that the vector of all zeros is in S.
+
+Second Point:
+To satisfy the second condition, S must be closed under vector addition \\
+We want to show if for all $\vec{u}, \vec{v} \in S$, then $\vec{u}+\vec{v} \in S$ \\
+$\cdot$ Let us assume $\vec{u}, \vec{v} \in S$. We know they are both $\mathbb{R}^n$ since S is a subset of $\mathbb{R}^n$. \\
+$\cdot$ Since $\mathbb{R}^n$ is a vector space, $\vec{u}+\vec{v} \in \mathbb{R}^n$. As S is a subset of $\mathbb{R}^n$, S is closed under vector addition which means any sum of two vectors in S is also in S.\\
+$\cdot$ Therefore, $\vec{u}+\vec{v} \in S$
+
+Third Point:
+To satisfy the third condition, S must be closed under scalar multiplication \\
+We want to show if $\vec{u} \in S$ and k is any scalar, then $k\vec{u} \in S$ \\
+$\cdot$ Let us assume $\vec{u} \in S$. Again, since S is a subset of $\mathbb{R}^n$, S is closed under scalar multiplication which means that the scalar multiplication of any vector in S is also in S. \\
+$\cdot$ Therefore, $k\vec{u} \in S$ \\
+
+Satisfying all three conditions, we can say that S is a subspace while being a subset of $\mathbb{R}^n$.
+}
+
 
 \section{Proving $P$ is a Subspace Using The Definition of Subspace}
 \textbar{In section two, when deriving the projection of a vector onto a set of vectors, we accidentally came across the normal form. Although this form can describe many things, in section two, it was intended to represent a one-dimensional subspace. Now in section five, we will prove that a plane expressed in normal form is a subspace. Continuing derivation of normal form from, section 2: }
@@ -1020,11 +1155,34 @@ $2kx_1 + ky_1 + k z_1 = 0$
 
 $k(2x_1 + y_1 + z_1) = 0$
 
-We know, $2x_1 + y_1 + z_1 = 0$ so $k \cdot 0 = 0$ which proves closed under scalar mulitiplication. 
+We know, $2x_1 + y_1 + z_1 = 0$ so $k \cdot 0 = 0$ which proves closed under scalar multiplication. 
 
 Q.E.D. 
-
-
 }
+
+
+\section{Show how span(S) can be a set with infinitely many vectors}
+\textbar{To show which choices of S is span(S) a set with infinitely, we need to understand the definition of span:
+}
+\begin{center}
+    \textit{By definition, the span of a set of vectors V is the set of all linear combinations of vectors in V. \\
+    span(V) = \{$\vec{v} : \vec{v} = a_1\vec{v_1} + a_2\vec{v_2} + ... + a_n\vec{v_n} \in V and scalars a_1, a_2,..., a_n$\}.
+    }
+\end{center}
+\textbar{Since span of a set of vectors is the set of all linear combinations of vectors in that set, if S is a finite set with k amount of vectors, then the span of S contains at most k amount of vectors. On the other hand, if S is an infinite set, then the span of S can contain an infinite amount of vectors. 
+
+To determine span(S) to have infinitely many vectors, we can show some examples below: 
+
+1. We can set S as the set of all vectors in $\mathbb{R}^n$ which means S will have infinite amount of vectors. That means span(S) would be $\mathbb{R}^n$ which also contains an infinite amount of vectors. \\
+2. If S only contains linearly independent vectors, then span(S) will have infinitely many vectors. This occurs because linear combinations of linearly independent vectors will also be linearly independent which makes it so that there are infinitely many ways to form linear combinations of the vectors in S. For example, let us say that:}
+\begin{center}
+$S = \left\{ \begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\right\}. 
+$
+\end{center}
+
+\textbar{If we add any vectors that are linearly dependent like (1, 1, 1), we can write those vectors by taking linear combinations of the linearly independent vectors. So adding other vectors would not make a difference. The first three vectors create the standard basis for $\mathbb{R}^3$. In other words, if S contains an infinite amount of linearly independent vectors, its span will also have infinitely many vectors.
+}
+%%%%% You cannot have a set which contains an infinte amount of linearly independent vectors in R^n. We can form linearly dependent vectors from combinations of linearly independent vectors. For instance, use can use basis vectors to find any vector in R^n, and as a result any combination of the basis vectors will be linearly dependent. 
+%%% I'm going to work on 3 -> 4 -> 5 -> 6, just to make sure they are clear, and to have each question build upon the other. 
 
 \end{document}
